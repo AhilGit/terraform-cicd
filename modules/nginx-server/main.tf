@@ -1,5 +1,5 @@
 resource "aws_instance" "web" {
-  ami           = "ami-0f5ee92e2d63afc18"
+  ami           = "ami-02dfbd4ff395f2a1b"
   instance_type = "t2.micro"
 
   vpc_security_group_ids = [aws_security_group.web_sg.id]
@@ -13,12 +13,15 @@ resource "aws_instance" "web" {
               EOF
 
   tags = {
-    Name = "terraform-nginx-test"
+    Name = "terraform-nginx-notest"
   }
 }
 
 resource "aws_security_group" "web_sg" {
-  name = "nginx-sg"
+  name = "nginx-sg-us-east"
+  lifecycle {
+    create_before_destroy = true
+  }
 
   ingress {
     from_port   = 80
