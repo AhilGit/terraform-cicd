@@ -13,7 +13,7 @@ resource "aws_instance" "web" {
               EOF
 
   tags = {
-    Name = "terraform-nginx"
+    Name = "terraform-nginx-test"
   }
 }
 
