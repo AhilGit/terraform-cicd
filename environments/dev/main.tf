@@ -9,4 +9,5 @@ module "nginx_server" {
   instance_type = var.instance_type
   instance_name = var.instance_name
   sg_name       = var.sg_name
+  vpc_id = var.vpc_id
 }

@@ -17,3 +17,7 @@ variable "instance_name" {
 variable "sg_name" {
   default = "dev-nginx-sg"
 }
+
+variable "vpc_id" {
+  default = "vpc-0a12b3456c78d9e01"
+}
